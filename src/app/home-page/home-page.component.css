@@ -1,0 +1,17 @@
+.cart-img{
+    height: 40px;
+    width: 40px;
+}
+
+.logo {
+    height: 120px;
+    width: 120px;
+}
+
+.card {
+    border-color: transparent;
+}
+
+.card:hover {
+    
+}

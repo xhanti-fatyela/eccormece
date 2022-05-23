@@ -1,0 +1,45 @@
+<<nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container-fluid">
+      <img src="../assets/images/proj-logo.png" alt="logo" class="logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          
+        
+        </ul>
+      
+          
+          <button class="btn btn-outline-success" type="submit">Sign In</button>
+          <button class="btn btn-outline-success" type="submit">Sign Up</button>
+          <img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img">
+      
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col" *ngFor="let sneakers of sneakers">
+        
+        <div class="card" style="width: 18rem;;">
+          <img src="{{sneakers.image}}" class="card-img-top" alt="..." style="width: 18rem; height: 18rem;">
+          <div class="card-body">
+            <a routerLink="/details/{{sneakers.brand}}"><h5 class="card-title">{{sneakers.brand}} {{sneakers.name}}</h5></a>
+            <h6>R{{sneakers.price}}</h6>
+      
+           
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
