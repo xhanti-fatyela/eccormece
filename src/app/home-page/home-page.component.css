@@ -10,8 +10,14 @@
 
 .card {
     border-color: transparent;
+    transition: 2s;
 }
 
 .card:hover {
-    
+    transform: translateY(-15px);
+}
+
+a {
+    text-decoration: none;
+    color: green;
 }

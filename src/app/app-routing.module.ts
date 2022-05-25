@@ -5,6 +5,7 @@ import { DetailPageComponent } from './detail-page/detail-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', component: HomePageComponent },
   {path: 'cart' , component: CartComponent},
   {path: 'details/:id' , component: DetailPageComponent}

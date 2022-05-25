@@ -1,4 +1,4 @@
-<<nav class="navbar navbar-expand-lg bg-transparent">
+<nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
       <img src="../assets/images/proj-logo.png" alt="logo" class="logo">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
         <div class="card" style="width: 18rem;;">
           <img src="{{sneakers.image}}" class="card-img-top" alt="..." style="width: 18rem; height: 18rem;">
           <div class="card-body">
-            <a routerLink="/details/{{sneakers.brand}}"><h5 class="card-title">{{sneakers.brand}} {{sneakers.name}}</h5></a>
+            <a routerLink="/details/{{sneakers.id}}"><h5 class="card-title">{{sneakers.brand}} {{sneakers.name}}</h5></a>
             <h6>R{{sneakers.price}}</h6>
       
            
@@ -43,3 +43,5 @@
     </div>
   
   </div>
+
+  

@@ -1,73 +1,77 @@
-<section id="services" class="services section-bg">
-    <div class="container-fluid">
-    
-       <div class="row row-sm">
-          <div class="col-md-6 _boxzoom">
+<nav class="navbar navbar-expand-lg bg-transparent">
+   <div class="container-fluid">
+     <a routerLink="/cart"><img src="../assets/images/proj-logo.png" alt="logo" class="logo"></a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse " id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="#">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Products</a>
+         </li>
          
-             <div class="_product-images">
-                <div class="picZoomer">
-                   <img class="my_img" src="" alt="">
-                </div>
-             </div>
+       
+       </ul>
+     
+         
+         <button class="btn btn-outline-success" type="submit">Sign In</button>
+         <button class="btn btn-outline-success" type="submit">Sign Up</button>
+         <img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img">
+     
+     </div>
+   </div>
+ </nav>
+
+<div class="container">
+    <div class="row">
+       <div class="col-md-5">
+          
+         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" *ngIf="sneakers">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{sneakers.image}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{sneakers.altimage1}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{sneakers.altimage2}}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="col-md-6">
-             <div class="_product-detail-content">
-                <p class="_p-name"> Milton Bottle </p>
-                <div class="_p-price-box">
-                   <div class="p-list">
-                      <span> M.R.P. : <i class="fa fa-inr"></i> <del> 1399  </del>   </span>
-                      <span class="price"> Rs. 699 </span>
-                   </div>
-                   <div class="_p-add-cart">
-                      <div class="_p-qty">
-                         <span>Add Quantity</span>
-                         <div class="value-button decrease_" id="" value="Decrease Value">-</div>
-                         <input type="number" name="qty" id="number" value="1" />
-                         <div class="value-button increase_" id="" value="Increase Value">+</div>
-                      </div>
-                   </div>
-                   <div class="_p-features">
-                      <span> Description About this product:- </span>
-                      Solid color polyester/linen full blackout thick sunscreen floor curtain
-                      Type: General Pleat
-                      Applicable Window Type: Flat Window
-                      Format: Rope
-                      Opening and Closing Method: Left and Right Biparting Open
-                      Processing Accessories Cost: Included
-                      Installation Type: Built-in
-                      Function: High Shading(70%-90%)
-                      Material: Polyester / Cotton
-                      Style: Classic
-                      Pattern: Embroidered
-                      Location: Window
-                      Technics: Woven
-                      Use: Home, Hotel, Hospital, Cafe, Office
-                      Feature: Blackout, Insulated, Flame Retardant
-                      Place of Origin: India
-                      Name: Curtain
-                      Usage: Window Decoration
-                      Keywords: Ready Made Blackout Curtain                        
-                   </div>
-                   <form action="" method="post" accept-charset="utf-8">
-                      <ul class="spe_ul"></ul>
-                      <div class="_p-qty-and-cart">
-                         <div class="_p-add-cart">
-                            <button class="btn-theme btn buy-btn" tabindex="0">
-                            <i class="fa fa-shopping-cart"></i> Buy Now
-                            </button>
-                            <button class="btn-theme btn btn-success" tabindex="0">
-                            <i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
-                            <input type="hidden" name="pid" value="18" />
-                            <input type="hidden" name="price" value="850" />
-                            <input type="hidden" name="url" value="" />    
-                         </div>
-                      </div>
-                   </form>
-                </div>
-             </div>
-          </div>
+
        </div>
+
+       <div class="col-md-7" *ngIf="sneakers">
+          <p class="newarrival text-center">Fresh-In</p>
+          <h2>{{sneakers.name}}</h2>
+          <p>{{sneakers.description}}</p>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+
+          <p class="price"><b>Price: R {{sneakers.price}}</b></p>
+          <p><b>Brand: {{sneakers.brand}}</b></p>
+
+          <label for="">Quantity</label>
+          <input type="text" value="1">
+          <!-- <button type="button" class="btn btn-default cart">Add To Cart</button> -->
+          <button class="btn btn-outline-success" type="submit" (click)="addToCart(sneakers)">Add To Cart</button>
+      </div>
     </div>
- </section>
+</div>
 

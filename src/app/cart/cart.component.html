@@ -1,1 +1,47 @@
-<p>cart works!</p>
+<body>
+    <div class="CartContainer">
+           <div class="Header">
+               <h3 class="Heading">Shopping Cart</h3>
+               <h5 class="Action">Remove all</h5>
+           </div>
+ 
+           <div class="Cart-Items" *ngIf="sneakers">
+                 <div class="image-box">
+                     <img src="{{sneakers.image}}" style="height: 120px;" />
+                 </div>
+                 <div class="about">
+                     <h1 class="title">{{sneakers.brand}}</h1>
+                     <br>
+                     <h3 class="subtitle">Size 6</h3>
+                    
+                 </div>
+                 <div class="counter">
+                     <div class="btn">+</div>
+                     <div class="count">2</div>
+                     <div class="btn">-</div>
+                 </div>
+                 <div class="prices">
+                     <div class="amount">R {{sneakers.price}</div>
+                     
+                     <div class="remove"><u>Remove</u></div>
+                 </div>
+           </div>
+
+           <div class="cart-item" *ngFor="let item of items">
+            <span>{{ item.name }}</span>
+            <span>{{ item.price | currency }}</span>
+          </div>
+ 
+         <hr> 
+         <div class="checkout">
+         <div class="total">
+             <div>
+                 <div class="Subtotal">Sub-Total</div>
+                 <div class="items">2 items</div>
+             </div>
+             <div class="total-amount">R12.00</div>
+         </div>
+         <button class="button">Checkout</button></div>
+       
+    </div>
+ </body>
