@@ -17,7 +17,8 @@ import { Sneaker } from 'src/sneakers';
 export class DetailPageComponent implements OnInit {
 
   sneakers?: Sneaker;
-
+  product = JSON.parse(`${localStorage.getItem('products')}`) ? JSON.parse(`${localStorage.getItem('products')}`) : null
+  cart: any[] = []
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService,
@@ -37,13 +38,15 @@ export class DetailPageComponent implements OnInit {
     this.productService.getProduct(id)
     .subscribe(sneakers => {
       this.sneakers = sneakers 
-      
+      localStorage.setItem('products', JSON.stringify(this.sneakers))
     });
   }
 
   
-  addToCart(product: Sneaker) {
-    this.cartService.addToCart(product);
+  addToCart() {
+    this.cart.push(this.product)
+    localStorage.setItem('cart', JSON.stringify(this.cart))
+    
     window.alert('Your product has been added to the cart!');
   }
   

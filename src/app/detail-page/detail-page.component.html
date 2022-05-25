@@ -70,7 +70,10 @@
           <label for="">Quantity</label>
           <input type="text" value="1">
           <!-- <button type="button" class="btn btn-default cart">Add To Cart</button> -->
-          <button class="btn btn-outline-success" type="submit" (click)="addToCart(sneakers)">Add To Cart</button>
+          <div class="product" *ngIf="product">
+            <button class="btn btn-outline-success" type="submit" (click)="addToCart()">Add To Cart</button>
+          </div>
+          
       </div>
     </div>
 </div>

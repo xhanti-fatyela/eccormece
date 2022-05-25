@@ -5,12 +5,12 @@
                <h5 class="Action">Remove all</h5>
            </div>
  
-           <div class="Cart-Items" *ngIf="sneakers">
+           <div class="Cart-Items" >
                  <div class="image-box">
-                     <img src="{{sneakers.image}}" style="height: 120px;" />
+                     <img src="" style="height: 120px;" />
                  </div>
                  <div class="about">
-                     <h1 class="title">{{sneakers.brand}}</h1>
+                     <h1 class="title"></h1>
                      <br>
                      <h3 class="subtitle">Size 6</h3>
                     
@@ -21,16 +21,13 @@
                      <div class="btn">-</div>
                  </div>
                  <div class="prices">
-                     <div class="amount">R {{sneakers.price}</div>
+                     <div class="amount">R</div>
                      
                      <div class="remove"><u>Remove</u></div>
                  </div>
            </div>
 
-           <div class="cart-item" *ngFor="let item of items">
-            <span>{{ item.name }}</span>
-            <span>{{ item.price | currency }}</span>
-          </div>
+
  
          <hr> 
          <div class="checkout">
