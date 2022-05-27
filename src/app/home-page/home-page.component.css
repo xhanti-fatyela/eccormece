@@ -21,3 +21,17 @@ a {
     text-decoration: none;
     color: green;
 }
+
+.butto-style {
+    border: 1px;
+    border-radius: 30%;
+    color: black;
+    background: white;
+   
+}
+
+.butto-style:hover{
+    background: green;
+    color: black;
+}
+

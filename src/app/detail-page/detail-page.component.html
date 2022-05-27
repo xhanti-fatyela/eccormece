@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-transparent">
    <div class="container-fluid">
-     <a routerLink="/cart"><img src="../assets/images/proj-logo.png" alt="logo" class="logo"></a>
+     <img src="../assets/images/proj-logo.png" alt="logo" class="logo">
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -19,7 +19,7 @@
          
          <button class="btn btn-outline-success" type="submit">Sign In</button>
          <button class="btn btn-outline-success" type="submit">Sign Up</button>
-         <img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img">
+         <a routerLink="/cart"><img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img"></a>
      
      </div>
    </div>
@@ -69,10 +69,7 @@
 
           <label for="">Quantity</label>
           <input type="text" value="1">
-          <!-- <button type="button" class="btn btn-default cart">Add To Cart</button> -->
-          <div class="product" *ngIf="product">
-            <button class="btn btn-outline-success" type="submit" (click)="addToCart()">Add To Cart</button>
-          </div>
+         
           
       </div>
     </div>

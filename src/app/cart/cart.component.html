@@ -5,23 +5,24 @@
                <h5 class="Action">Remove all</h5>
            </div>
  
-           <div class="Cart-Items" >
+           <div class="Cart-Items" *ngFor="let product of cart; let i = index" >
                  <div class="image-box">
-                     <img src="" style="height: 120px;" />
+                     <img [src]="product.image" style="height: 120px;" />
                  </div>
                  <div class="about">
                      <h1 class="title"></h1>
                      <br>
-                     <h3 class="subtitle">Size 6</h3>
+                     <h3 class="subtitle">{{product.brand}}</h3>
+                     <h3 class="subtitle">{{product.name}}</h3>
                     
                  </div>
                  <div class="counter">
-                     <div class="btn">+</div>
-                     <div class="count">2</div>
-                     <div class="btn">-</div>
+                     <button class="btn" (click)="increment(i)">+</button>
+                     <div class="count">{{product.quantity}}</div>
+                     <div class="btn" (click)="decrement(i)">-</div>
                  </div>
                  <div class="prices">
-                     <div class="amount">R</div>
+                     <div class="amount">{{product.price | currency: 'ZAR'}}</div>
                      
                      <div class="remove"><u>Remove</u></div>
                  </div>
@@ -33,10 +34,10 @@
          <div class="checkout">
          <div class="total">
              <div>
-                 <div class="Subtotal">Sub-Total</div>
-                 <div class="items">2 items</div>
+                 <div class="Subtotal">{{total}}</div>
+                 <div class="items">R20.00</div>
              </div>
-             <div class="total-amount">R12.00</div>
+             <div class="total-amount">{{total + 20}}</div>
          </div>
          <button class="button">Checkout</button></div>
        

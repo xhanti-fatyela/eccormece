@@ -19,7 +19,7 @@
           
           <button class="btn btn-outline-success" type="submit">Sign In</button>
           <button class="btn btn-outline-success" type="submit">Sign Up</button>
-          <img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img">
+         <a routerLink="/cart"><img src="https://myonline-store.herokuapp.com/images/cart.png" alt="cart" class="cart-img"></a> 
       
       </div>
     </div>
@@ -27,7 +27,8 @@
   
   <div class="container">
     <div class="row">
-      <div class="col" *ngFor="let sneakers of sneakers">
+      <p>You have {{display}} item(s)</p>
+      <div class="col" *ngFor="let sneakers of sneakers; let i =index">
         
         <div class="card" style="width: 18rem;;">
           <img src="{{sneakers.image}}" class="card-img-top" alt="..." style="width: 18rem; height: 18rem;">
@@ -38,8 +39,13 @@
            
           </div>
         </div>
-  
+        <div class="buttons" >
+          <button (click)="addToCart(i)" class="butto-style">Add</button>
+        </div>
       </div>
+   
+      
+
     </div>
   
   </div>

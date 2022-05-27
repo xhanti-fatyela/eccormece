@@ -44,8 +44,9 @@ export class DetailPageComponent implements OnInit {
 
   
   addToCart() {
-    this.cart.push(this.product)
+   this.cart.push(this.product)
     localStorage.setItem('cart', JSON.stringify(this.cart))
+    
     
     window.alert('Your product has been added to the cart!');
   }
