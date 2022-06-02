@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
     repassword: new FormControl('')
   })
   
-  users: User[] = []
+  users: User[] = JSON.parse(`${localStorage.getItem('users')}`) ? JSON.parse(`${localStorage.getItem('users')}`) : []
   email: any
   password: any
   repassword: any
@@ -29,16 +29,15 @@ export class SignUpComponent implements OnInit {
   }
 
   register() {
-    let data
     let user = {
       email: this.regForm.value.email,
       password: this.regForm.value.password
     }
     if(this.regForm.value.repassword == this.regForm.value.password){
-      data = this.users.push(user)
+      this.users.push(user)
       localStorage.setItem('users', JSON.stringify(this.users))
-        this.router.navigate(['/homepage'])
-        return alert('Welcome Happy Shopping!')
+        this.router.navigate(['/login'])
+        return alert('Welcome, Now Lets Sign In')
     }
     
   }

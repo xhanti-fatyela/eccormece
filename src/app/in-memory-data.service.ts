@@ -14,7 +14,7 @@ const sneakers = [
       name: 'Dunks-HighTop',
       brand: 'Nike',
       size: 7 ,
-      price: 3000 ,
+      price: 1200 ,
       color: 'Orange/White' ,
       image: 'https://cdn.shopify.com/s/files/1/0255/9429/8467/products/nike-dunk-high-syracuse-2021-dd1399-101_1_96c1f52e-17da-456c-8083-cfc19d811fc2_1800x1800.jpg?v=1628421938',
       altimage1: 'https://cdn.shopify.com/s/files/1/0255/9429/8467/products/nike-dunk-high-syracuse-2021-dd1399-101_2_1800x1800.jpg?v=1616079201',

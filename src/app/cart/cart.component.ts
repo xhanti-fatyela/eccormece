@@ -40,10 +40,11 @@ export class CartComponent implements OnInit {
   
 
   increment(index: number){
-    this.value++
+  
     console.log(this.value)
+    let q = this.cart[index].quantity++
     let sneaker = {
-      quantity: this.value,
+      quantity: q,
       ...this.cart[index]
     }
     this.cart.splice(index,1,sneaker)
@@ -64,6 +65,8 @@ export class CartComponent implements OnInit {
      console.log(this.cart)
      this.totalPrice()
   }
+
+ 
   
 
 }
