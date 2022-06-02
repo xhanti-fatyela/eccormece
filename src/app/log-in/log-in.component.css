@@ -1,0 +1,46 @@
+body{
+    background: white !important;
+    font-family: 'Muli', sans-serif;
+    
+  }
+  h1{
+    color: #fff;
+    padding-bottom: 2rem;
+    font-weight: bold;
+  }
+  a{
+    color: #333;
+  }
+  a:hover{
+    color: green;
+    text-decoration: none;
+  }
+  .form-control:focus {
+  
+      color: #000;
+      background-color: #fff;
+      border:2px solid green;
+      outline: 0;
+      box-shadow: none;
+  
+  }
+  
+  .btn{
+    background: green;
+    border: white;
+  }
+  .btn:hover {
+    background: greenyellow;
+    border: green;
+  }
+  
+  .card {
+     
+    box-shadow: 0px 10px 20px #2fd8a033;
+  }
+
+
+.logo {
+    height: 120px;
+    width: 120px;
+}
