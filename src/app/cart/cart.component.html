@@ -2,10 +2,11 @@
     <div class="CartContainer">
            <div class="Header">
                <h3 class="Heading">Shopping Cart</h3>
-               <h5 class="Action">Remove all</h5>
+               
            </div>
  
            <div class="Cart-Items" *ngFor="let product of cart; let i = index" >
+           
                  <div class="image-box">
                      <img [src]="product.image" style="height: 120px;" />
                  </div>
@@ -19,12 +20,13 @@
                  <div class="counter">
                      <button class="btn" (click)="increment(i)">+</button>
                      <div class="count">{{product.quantity}}</div>
-                     <div class="btn" (click)="decrement(i)">-</div>
+                     <div class="btn" (click)="decrement(product.quantity, i)">-</div>
                  </div>
                  <div class="prices">
                      <div class="amount">{{product.price | currency: 'ZAR'}}</div>
                      
-                     <div class="remove"><u>Remove</u></div>
+                     <div class="remove">
+                         <button class="remove" (click)="deleteItem(i)"><u>Remove</u></button></div>
                  </div>
            </div>
 

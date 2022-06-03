@@ -126,6 +126,8 @@ body{
 	font-weight: 600;
 	color: #E44C4C;
 	cursor: pointer;
+	background: white;
+	border: none;
 }
 
 .pad{
