@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LogInComponent } from './log-in/log-in.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'cart' , component: CartComponent},
   {path: 'details/:id' , component: DetailPageComponent},
   {path: 'login' , component: LogInComponent},
-  {path: 'sign-up' , component: SignUpComponent}
+  {path: 'sign-up' , component: SignUpComponent},
+  {path: 'checkout', component: CheckoutPageComponent}
 ];
 
 @NgModule({

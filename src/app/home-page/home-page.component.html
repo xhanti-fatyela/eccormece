@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/homepage">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" routerLink="/homepage">Products</a>
           </li>
           
         
@@ -26,6 +26,7 @@
   </nav>
          <h3 style="text-align: center; font-size: smaller;">Sneaker Hub, Where your resell needs are met</h3>
   <div class="container">
+    <!-- <div class="alert alert-danger">Welcome Home</div> -->
     <div class="row">
       <p>You have {{display}} item(s)</p>
       <div class="col" *ngFor="let sneakers of sneakers; let i =index">

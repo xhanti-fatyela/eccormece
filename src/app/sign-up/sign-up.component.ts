@@ -36,8 +36,12 @@ export class SignUpComponent implements OnInit {
     if(this.regForm.value.repassword == this.regForm.value.password){
       this.users.push(user)
       localStorage.setItem('users', JSON.stringify(this.users))
-        this.router.navigate(['/login'])
-        return alert('Welcome, Now Lets Sign In')
+        this.router.navigate(['/homepage'])
+        // return alert('Welcome, Now Lets Sign In')
+    }
+
+    else if (this.regForm.value.repassword !== this.regForm.value.password) {
+      alert('Incorrect Entry')
     }
     
   }
