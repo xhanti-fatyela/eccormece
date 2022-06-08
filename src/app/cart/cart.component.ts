@@ -40,6 +40,7 @@ export class CartComponent implements OnInit {
    }
 
   totalPrice(){
+    let total =  0
     this.cart.forEach((element: any) => {
       this.total += element.price*element.quantity
       
@@ -59,10 +60,13 @@ export class CartComponent implements OnInit {
 
   
   decrement(quantity: any, index: number){
+    
     const items = JSON.parse(`${localStorage.getItem('cart')}`) ? JSON.parse(`${localStorage.getItem('cart')}`) : []
   if(quantity > 1)
     quantity--
     items[index].quantity = quantity
+    console.log(quantity)
+    
     this.totalPrice()
    
   }
