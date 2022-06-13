@@ -13,6 +13,7 @@ import { DetailPageComponent } from './detail-page/detail-page.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     DetailPageComponent,
     LogInComponent,
     SignUpComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

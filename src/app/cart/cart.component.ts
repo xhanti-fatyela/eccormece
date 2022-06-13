@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
 
 import { Sneaker } from '../../sneakers';
 
@@ -18,7 +19,8 @@ export class CartComponent implements OnInit {
   // value: number = 1
   total =  0
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,12 +37,14 @@ export class CartComponent implements OnInit {
    deleteItem(i: number): void{
 
     this.cart.splice(i, 1)
+    localStorage.setItem('cart', JSON.stringify(this.cart))
+    this.reloadCurrent()
     this.totalPrice()
+    
 
    }
 
   totalPrice(){
-    let total =  0
     this.cart.forEach((element: any) => {
       this.total += element.price*element.quantity
       
@@ -60,12 +64,10 @@ export class CartComponent implements OnInit {
 
   
   decrement(quantity: any, index: number){
-    
     const items = JSON.parse(`${localStorage.getItem('cart')}`) ? JSON.parse(`${localStorage.getItem('cart')}`) : []
   if(quantity > 1)
     quantity--
     items[index].quantity = quantity
-    console.log(quantity)
     
     this.totalPrice()
    
@@ -100,7 +102,12 @@ export class CartComponent implements OnInit {
   //    this.totalPrice()
   // }
 
- 
+  reloadCurrent() {
+    let current = this.router.url
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> {
+      this.router.navigate([current])
+    })
+  }
   
 
 }
